@@ -9,4 +9,5 @@ A set of custom tools to simplify work specific to my team:
 
 3. A simple generator of pseudo-random passwords.
 
-Originally compiled using pyinstaller, with the command: "pyinstaller --onefile --windowed PAPER.py"
+Originally compiled using pyinstaller, with the command: "pyinstaller --onefile --windowed PAPER.py".
+Since I wrote it on my own initiative and mostly in my own free time, I believe it is fair for me to publish it. Any information that could be considered sensitive has been removed prior to github upload.
