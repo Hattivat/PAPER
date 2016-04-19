@@ -8,3 +8,5 @@ A set of custom tools to simplify work specific to my team:
 2. An inbox cleaner moving auto-generated email typical for our work (it has to be stored for audit) to a folder dedicated for it.
 
 3. A simple generator of pseudo-random passwords.
+
+Originally compiled using pyinstaller, with the command: "pyinstaller --onefile --windowed PAPER.py"
