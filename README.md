@@ -7,7 +7,7 @@ A set of custom tools to simplify work specific to my team:
 
 2. An inbox cleaner moving auto-generated email typical for our work (it has to be stored for audit) to a folder dedicated for it.
 
-3. A simple generator of pseudo-random passwords.
+3. A simple generator of pseudo-random passwords for use as single-use placeholders.
 
 Originally compiled using pyinstaller, with the command: "pyinstaller --onefile --windowed PAPER.py".
 Since I wrote it on my own initiative and mostly in my own free time, I believe it is fair for me to publish it. Any information that could be considered sensitive has been removed prior to github upload.
