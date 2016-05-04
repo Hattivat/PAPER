@@ -6,9 +6,10 @@ acceptable_chars = 'abcdefghjkmnqprstuvwx23456789ABCDEFGHJKMNQPRSTUVWX23456789'
 
 def pass_gen(size=12):
     password = ''
-    for character in range(size):
-        randomness = urandom(1)
-        password.join(acceptable_chars[randomness % 58])
+    for i in range(size):
+        randomness = int.from_bytes(urandom(1), byteorder='little')
+        character = acceptable_chars[randomness % 58]
+        password += character
     print(password)
 
 
