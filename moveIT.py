@@ -168,7 +168,10 @@ def process_mail(message, outlook, sharedmail, signature):
     newMail.Send()
     print("Email sent to {0}".format(manager))
 
-if __name__ == "__main__":
+def main():
+    # A flag for whether any MoveIT requests have been found and processed
+    moveitsent = False
+    # Set up the connection with Outlook
     outlook = client.Dispatch("Outlook.Application")
     outlookMAPI = outlook.GetNamespace("MAPI")
     recipient = outlookMAPI.CreateRecipient(SHAREDMAILBOX)
@@ -183,5 +186,13 @@ if __name__ == "__main__":
         # first check if the filename (email title) indicates a MoveIT request
         if item.subject.startswith("Continued Privileged Access required for"):
             process_mail(item, outlook, SHAREDMAILBOX, SIGNATURE)
+            moveitsent = True
             # move the processed mail to the "pending" folder, awaiting reply
+            item.UnRead = False
             item.Move(pendingfolder)
+    # Feedback in case no MoveIT requests found in inbox
+    if moveitsent == False:
+        print("No MoveIT requests found.")
+        
+if __name__ == "__main__":
+    main()
